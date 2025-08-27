@@ -9,10 +9,11 @@ foreach ($updates as $u) {
   $tatsaechlich = (int)$u['tatsaechlich'];
 
   $stmt = $pdo->prepare("
-    SELECT SUM(menge) FROM eingang_position
-    WHERE kleidung_id = ? AND groesse = ?
+    SELECT
+      COALESCE((SELECT SUM(menge) FROM eingang_position WHERE kleidung_id = ? AND groesse = ?), 0) -
+      COALESCE((SELECT SUM(menge) FROM ausgabe_position WHERE kleidung_id = ? AND groesse = ?), 0)
   ");
-  $stmt->execute([$artikel, $groesse]);
+  $stmt->execute([$artikel, $groesse, $artikel, $groesse]);
   $ist = (int)$stmt->fetchColumn();
 
   $diff = $tatsaechlich - $ist;

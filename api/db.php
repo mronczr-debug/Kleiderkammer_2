@@ -1,8 +1,12 @@
 <?php
-$serverName = "NAUSWIASPSQL01"; // oder "localhost\\SQLEXPRESS" bei SQL Express
-$database = "Arbeitskleidung";
-$username = "HSN_DB1";
-$password = "HSNdb1";
+$serverName = getenv('DB_SERVER');
+$database   = getenv('DB_DATABASE');
+$username   = getenv('DB_USERNAME');
+$password   = getenv('DB_PASSWORD');
+
+if (!$serverName || !$database || !$username || !$password) {
+    die('❌ Datenbankzugangsdaten fehlen (Umgebungsvariablen setzen).');
+}
 
 try {
     $pdo = new PDO("sqlsrv:Server=$serverName;Database=$database", $username, $password);
