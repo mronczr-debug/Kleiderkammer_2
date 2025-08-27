@@ -1,5 +1,6 @@
+<div class="card">
 <h2>Artikelverwaltung</h2>
-<button onclick="openArtikelPopup()">➕ Artikel hinzufügen</button>
+<button class="btn btn-primary" onclick="openArtikelPopup()">➕ Artikel hinzufügen</button>
 
 <input type="text" id="artikel-suche" placeholder="🔍 Suche nach Bezeichnung oder Gruppe" />
 
@@ -14,6 +15,7 @@
   </thead>
   <tbody></tbody>
 </table>
+</div>
 
 <div id="artikel-popup" class="popup">
   <form id="artikel-form">
@@ -32,8 +34,8 @@
       <option>Diverses</option>
     </select>
     <div class="buttons">
-      <button type="submit">Speichern</button>
-      <button type="button" onclick="closeArtikelPopup()">Abbrechen</button>
+      <button class="btn btn-primary" type="submit">Speichern</button>
+      <button class="btn btn-secondary" type="button" onclick="closeArtikelPopup()">Abbrechen</button>
     </div>
   </form>
 </div>

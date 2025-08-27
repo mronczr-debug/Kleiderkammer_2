@@ -1,8 +1,9 @@
+<div class="card">
 <h2>Bestände verwalten</h2>
 
-<button onclick="window.location = 'api/export_bestaende_csv.php'">📥 Bestände als CSV exportieren</button>
+<button class="btn btn-primary" onclick="window.location = 'api/export_bestaende_csv.php'">📥 Bestände als CSV exportieren</button>
 
-<button onclick="createInventurliste()">📄 Inventurliste erstellen (A4)</button>
+<button class="btn btn-secondary" onclick="createInventurliste()">📄 Inventurliste erstellen (A4)</button>
 
 <table id="bestaende-tabelle">
   <thead>
@@ -16,6 +17,8 @@
   <tbody></tbody>
 </table>
 
+</div>
+
 <!-- Popup für Bestandskorrektur -->
 <div id="bestand-popup" class="popup">
   <form id="bestand-form">
@@ -25,8 +28,8 @@
     <label>Neuer Bestand:</label>
     <input type="number" name="neuer_bestand" min="0" required />
     <div class="buttons">
-      <button type="submit">Speichern</button>
-      <button type="button" onclick="closeBestandPopup()">Abbrechen</button>
+      <button class="btn btn-primary" type="submit">Speichern</button>
+      <button class="btn btn-secondary" type="button" onclick="closeBestandPopup()">Abbrechen</button>
     </div>
   </form>
 </div>

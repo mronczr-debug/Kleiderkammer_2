@@ -1,5 +1,6 @@
+<div class="card">
 <h2>Mitarbeiterverwaltung</h2>
-<button onclick="openMitarbeiterPopup()">➕ Mitarbeiter hinzufügen</button>
+<button class="btn btn-primary" onclick="openMitarbeiterPopup()">➕ Mitarbeiter hinzufügen</button>
 <input type="text" id="mitarbeiter-suche" placeholder="🔍 Suche nach Name, Abteilung..." />
 
 <table id="mitarbeiter-tabelle">
@@ -16,6 +17,7 @@
   </thead>
   <tbody></tbody>
 </table>
+</div>
 
 <div id="mitarbeiter-popup" class="popup">
   <form id="mitarbeiter-form">
@@ -40,8 +42,8 @@
       <option value="extern">Extern</option>
     </select>
     <div class="buttons">
-      <button type="submit">Speichern</button>
-      <button type="button" onclick="closeMitarbeiterPopup()">Abbrechen</button>
+      <button class="btn btn-primary" type="submit">Speichern</button>
+      <button class="btn btn-secondary" type="button" onclick="closeMitarbeiterPopup()">Abbrechen</button>
     </div>
   </form>
 </div>

@@ -142,44 +142,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 /* ========= UI ========= */
 $flashSuccess = flash('success');
+
+require __DIR__.'/layout.php';
+layout_header('Materialien – Übersicht & Anlage');
 ?>
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <title>Materialien – Übersicht & Anlage</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.35;margin:2rem;background:#f7f7f8}
-    .layout{display:grid;grid-template-columns:2.2fr 1fr;gap:20px;align-items:start}
-    @media (max-width:1100px){.layout{grid-template-columns:1fr}}
-    .card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px;box-shadow:0 1px 20px rgba(0,0,0,.04)}
-    h1{margin:.2rem 0 1rem 0;font-size:1.4rem}
-    h2{margin:.2rem 0 1rem 0;font-size:1.15rem}
-    .filters{display:grid;grid-template-columns:1.2fr 1fr 1fr .7fr auto;gap:10px;margin-bottom:12px}
-    label{font-weight:600;font-size:.9rem;margin-bottom:.2rem;display:block}
-    input[type=text], select, textarea{width:100%;padding:.5rem .6rem;border:1px solid #d1d5db;border-radius:8px;background:#fff}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:.55rem .6rem;border-bottom:1px solid #e5e7eb;text-align:left;font-size:.95rem}
-    th{background:#f9fafb}
-    .muted{color:#6b7280}
-    .pill{display:inline-block;padding:.05rem .5rem;border-radius:999px;font-size:.78rem;border:1px solid #d1d5db}
-    .pill.on{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
-    .pill.off{background:#fef2f2;color:#991b1b;border-color:#fecaca}
-    .pagination{display:flex;gap:6px;align-items:center;margin-top:10px}
-    .btn{appearance:none;border:0;border-radius:10px;padding:.55rem .8rem;font-weight:600;cursor:pointer}
-    .btn-primary{background:#111827;color:#fff}
-    .btn-secondary{background:#e5e7eb}
-    .hint{color:#6b7280;font-size:.88rem}
-    .alert{padding:.6rem .8rem;border-radius:8px;margin-bottom:12px}
-    .alert-success{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
-    .alert-error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .grid1{display:grid;grid-template-columns:1fr;gap:12px}
-  </style>
-</head>
-<body>
-  <div class="layout">
+  <div class="split">
     <!-- Liste -->
     <div class="card">
       <h1>Materialien</h1>
@@ -357,5 +324,4 @@ $flashSuccess = flash('success');
       </div>
     </div>
   </div>
-</body>
-</html>
+<?php layout_footer(); ?>

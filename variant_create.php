@@ -198,46 +198,10 @@ $existing->execute([':mid'=>$materialId]);
 $variants = $existing->fetchAll(PDO::FETCH_ASSOC);
 
 /* ====== UI ====== */
+
+require __DIR__.'/layout.php';
+layout_header('Variante anlegen – '.$material['MaterialName']);
 ?>
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <title>Variante anlegen – <?= e($material['MaterialName']) ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.35;margin:2rem;background:#f7f7f8}
-    .card{max-width:980px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px;box-shadow:0 1px 20px rgba(0,0,0,.04)}
-    h1{margin:0 0 1rem 0;font-size:1.35rem}
-    .subtitle{color:#4b5563;margin-bottom:1.2rem}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .row-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .row-1{display:grid;grid-template-columns:1fr;gap:16px}
-    label{display:block;font-weight:600;margin:.2rem 0}
-    input[type=text], select, textarea{
-      width:100%;padding:.6rem .7rem;border:1px solid #d1d5db;border-radius:8px;font-size:1rem;background:#fff
-    }
-    textarea{min-height:80px}
-    .field{margin-bottom:14px}
-    .hint{color:#6b7280;font-size:.9rem}
-    .error{color:#b91c1c;font-size:.9rem;margin-top:.2rem}
-    .badge{display:inline-block;background:#eef2ff;color:#3730a3;border-radius:999px;padding:.15rem .55rem;font-size:.78rem;margin-left:.35rem}
-    .actions{margin-top:12px;display:flex;gap:8px;align-items:center}
-    .btn{appearance:none;border:0;border-radius:10px;padding:.7rem 1rem;font-weight:600;cursor:pointer}
-    .btn-primary{background:#111827;color:#fff}
-    .btn-secondary{background:#e5e7eb}
-    table{width:100%;border-collapse:collapse;margin-top:18px}
-    th,td{padding:.55rem .6rem;border-bottom:1px solid #e5e7eb;text-align:left;font-size:.95rem}
-    th{background:#f9fafb}
-    .pill{display:inline-block;padding:.05rem .5rem;border-radius:999px;font-size:.78rem;border:1px solid #d1d5db}
-    .pill.on{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
-    .pill.off{background:#fef2f2;color:#991b1b;border-color:#fecaca}
-    .alert{padding:.6rem .8rem;border-radius:8px;margin-bottom:12px}
-    .alert-success{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
-    .alert-error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
-  </style>
-</head>
-<body>
   <div class="card">
     <h1>Variante anlegen</h1>
     <div class="subtitle">
@@ -381,5 +345,4 @@ $variants = $existing->fetchAll(PDO::FETCH_ASSOC);
       <a class="btn btn-secondary" href="materials_list.php">Zurück zur Materialliste</a>
     </div>
   </div>
-</body>
-</html>
+<?php layout_footer(); ?>
