@@ -1,6 +1,16 @@
 // Global variables
 let signaturePad;
 
+function initSignaturePad() {
+  const canvas = document.getElementById("signature-pad");
+  if (!canvas) return;
+  if (!signaturePad) {
+    signaturePad = new SignaturePad(canvas);
+  } else {
+    signaturePad.clear();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("nav a");
   const content = document.getElementById("content");
@@ -78,7 +88,8 @@ function loadMitarbeiter() {
           .filter(m => `${m.vorname} ${m.nachname} ${m.abteilung}`.toLowerCase().includes(filter.toLowerCase()))
           .map(m => `
             <tr>
-              <td>${m.nachname}, ${m.vorname}</td>
+              <td>${m.nachname}</td>
+              <td>${m.vorname}</td>
               <td>${m.abteilung}</td>
               <td>${m.kleidergroesse}</td>
               <td>${m.schuhgroesse}</td>
@@ -179,7 +190,7 @@ function loadBestaende() {
 
 function openBestandPopup(id, groesse, bestand) {
   const f = document.getElementById("bestand-form");
-  f.kleidung_id.value = id;
+  f.artikel_id.value = id;
   f.groesse.value = groesse;
   f.neuer_bestand.value = bestand;
   document.getElementById("bestand-popup").style.display = "flex";
@@ -194,6 +205,8 @@ function closeBestandPopup() {
 function initAusgabe() {
   loadMitarbeiterDropdown();
   addAusgabePosition();
+  const datum = document.querySelector("input[name='datum']");
+  if (datum) datum.value = new Date().toISOString().slice(0, 10);
   loadRecentAusgaben();
 }
 
@@ -242,7 +255,6 @@ function loadGroessen(artSel) {
 }
 
 function openSignaturePopup() {
-  signaturePad && signaturePad.clear();
   initSignaturePad();
   document.getElementById("signature-popup").style.display = "flex";
 }
