@@ -1,0 +1,29 @@
+<h2>Wareneingang erfassen</h2>
+
+<form id="eingang-form">
+  <fieldset>
+    <legend>Kopfdaten</legend>
+    <label>Datum:</label>
+    <input type="date" name="datum" required />
+    <label>Lieferant:</label>
+    <input type="text" name="lieferant" required />
+  </fieldset>
+
+  <fieldset>
+    <legend>Positionsdaten</legend>
+    <table id="positionen-tabelle">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Größe</th>
+          <th>Menge</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button type="button" onclick="addEingangsPosition()">➕ Position hinzufügen</button>
+  </fieldset>
+
+  <button type="submit">💾 Wareneingang buchen</button>
+</form>

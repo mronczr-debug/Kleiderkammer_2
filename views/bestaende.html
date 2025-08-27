@@ -1,0 +1,32 @@
+<h2>Bestände verwalten</h2>
+
+<button onclick="window.location = 'api/export_bestaende_csv.php'">📥 Bestände als CSV exportieren</button>
+
+<button onclick="createInventurliste()">📄 Inventurliste erstellen (A4)</button>
+
+<table id="bestaende-tabelle">
+  <thead>
+    <tr>
+      <th>Artikel</th>
+      <th>Größe</th>
+      <th>Bestand</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<!-- Popup für Bestandskorrektur -->
+<div id="bestand-popup" class="popup">
+  <form id="bestand-form">
+    <h3>Bestand anpassen</h3>
+    <input type="hidden" name="artikel_id" />
+    <input type="hidden" name="groesse" />
+    <label>Neuer Bestand:</label>
+    <input type="number" name="neuer_bestand" min="0" required />
+    <div class="buttons">
+      <button type="submit">Speichern</button>
+      <button type="button" onclick="closeBestandPopup()">Abbrechen</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,47 @@
+<h2>Mitarbeiterverwaltung</h2>
+<button onclick="openMitarbeiterPopup()">➕ Mitarbeiter hinzufügen</button>
+<input type="text" id="mitarbeiter-suche" placeholder="🔍 Suche nach Name, Abteilung..." />
+
+<table id="mitarbeiter-tabelle">
+  <thead>
+    <tr>
+      <th>Nachname</th>
+	  <th>Vorname</th>
+      <th>Abteilung</th>
+      <th>Größe</th>
+      <th>Schuhgröße</th>
+      <th>Eintritt</th>
+      <th>Typ</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div id="mitarbeiter-popup" class="popup">
+  <form id="mitarbeiter-form">
+    <h3>Neuer Mitarbeiter</h3>
+	<input type="hidden" name="id" />
+    <input name="vorname" placeholder="Vorname" required />
+	<input name="nachname" placeholder="Nachname" required />
+	<select name="abteilung" required>
+	<option value="">– Abteilung wählen –</option>
+	<option>Wareneingang</option>
+	<option>Warenausgang</option>
+	<option>HUB</option>
+	<option>Materiallogistik</option>
+	<option>Hausmeister</option>
+	<option>kauf. Mitarbeiter</option>
+	</select>
+    <input name="kleidergroesse" placeholder="Kleidergröße" />
+    <input name="schuhgroesse" placeholder="Schuhgröße" />
+    <input name="eintrittsdatum" type="date" required />
+    <select name="typ" required>
+      <option value="intern">Intern</option>
+      <option value="extern">Extern</option>
+    </select>
+    <div class="buttons">
+      <button type="submit">Speichern</button>
+      <button type="button" onclick="closeMitarbeiterPopup()">Abbrechen</button>
+    </div>
+  </form>
+</div>

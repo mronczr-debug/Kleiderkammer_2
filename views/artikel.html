@@ -1,0 +1,39 @@
+<h2>Artikelverwaltung</h2>
+<button onclick="openArtikelPopup()">➕ Artikel hinzufügen</button>
+
+<input type="text" id="artikel-suche" placeholder="🔍 Suche nach Bezeichnung oder Gruppe" />
+
+<table id="artikel-tabelle">
+  <thead>
+    <tr>
+      <th>Bezeichnung</th>
+      <th>Gruppe</th>
+      <th>Größe</th>
+      <th>Aktion</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div id="artikel-popup" class="popup">
+  <form id="artikel-form">
+    <h3>Artikel</h3>
+    <input type="hidden" name="id" />
+    <input name="bezeichnung" placeholder="Bezeichnung" required />
+    <input name="groesse" placeholder="Größe" />
+    <select name="gruppe" required>
+      <option value="">– Gruppe wählen –</option>
+      <option>Schuhe</option>
+      <option>Hosen</option>
+      <option>Jacken</option>
+      <option>Shirts</option>
+      <option>Pullover</option>
+      <option>Handschuhe</option>
+      <option>Diverses</option>
+    </select>
+    <div class="buttons">
+      <button type="submit">Speichern</button>
+      <button type="button" onclick="closeArtikelPopup()">Abbrechen</button>
+    </div>
+  </form>
+</div>

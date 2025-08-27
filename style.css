@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.layout {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+nav {
+  width: 220px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+nav a:hover, nav a.active {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #ccc;
+  padding: 20px;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #f0f0f0;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+fieldset {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+#positionen-tabelle td input,
+#positionen-tabelle td select {
+  width: 100%;
+}

@@ -1,0 +1,68 @@
+<section class="card">
+  <div class="card-header">
+    <h2>Kleidungsausgabe</h2>
+  </div>
+
+  <form id="ausgabe-form">
+    <div class="form-grid">
+      <div>
+        <label>Mitarbeiter</label>
+        <select name="mitarbeiter_id" required></select>
+      </div>
+      <div>
+        <label>Datum</label>
+        <input type="date" name="datum" value="<?= date('Y-m-d') ?>" required />
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Ausgabe-Positionen</h3>
+      <table class="styled-table" id="ausgabe-positionen">
+        <thead>
+          <tr><th>Artikel</th><th>Größe</th><th>Menge</th><th></th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button type="button" class="btn btn-secondary" onclick="addAusgabePosition()">➕ Position hinzufügen</button>
+    </div>
+
+    <input type="hidden" name="unterschrift" id="unterschrift" />
+
+    <div class="form-buttons">
+      <button type="button" class="btn btn-success" onclick="openSignaturePopup()">Kleidung ausgeben</button>
+    </div>
+  </form>
+</section>
+
+<!-- Popup für Unterschrift -->
+<div class="popup" id="signature-popup">
+  <div class="card popup-inner">
+    <h3>Unterschrift zur Bestätigung</h3>
+    <canvas id="signature-pad" width="400" height="200" style="border:1px solid #ccc;"></canvas>
+    <div class="form-buttons">
+      <button class="btn btn-primary" onclick="confirmAusgabe()">✅ OK</button>
+      <button class="btn" onclick="closeSignaturePopup()">❌ Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Letzte Ausgaben -->
+<section class="card">
+  <div class="card-header">
+    <h3>Letzte Ausgaben</h3>
+  </div>
+  <table class="styled-table" id="recent-ausgaben-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Mitarbeiter</th>
+        <th>Datum</th>
+        <th>Artikel</th>
+        <th>Größe</th>
+        <th>Menge</th>
+        <th>Quittung</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
